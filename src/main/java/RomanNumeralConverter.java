@@ -8,13 +8,12 @@ public class RomanNumeralConverter {
     public RomanNumeralConverter() {
         results = new TreeMap<>();
         results.put(1, "I");
-        results.put(2, "II");
-        results.put(3, "III");
         results.put(4, "IV");
     }
 
-
     public String convert(int decimal) {
-        return results.get(decimal);
+        if (results.containsKey(decimal))
+            return results.get(decimal);
+        return results.get(1) + convert(decimal - 1);
     }
 }
