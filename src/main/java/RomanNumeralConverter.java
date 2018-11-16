@@ -9,6 +9,10 @@ public class RomanNumeralConverter {
         results = new TreeMap<>();
         results.put(1, "I");
         results.put(4, "IV");
+        results.put(5, "V");
+        results.put(6, "VI");
+        results.put(7, "VII");
+        results.put(8, "VIII");
     }
 
     public String convert(int decimal) {

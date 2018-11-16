@@ -12,6 +12,10 @@ public class RomanNumeralConverterShould {
             "2,II",
             "3,III",
             "4,IV",
+            "5,V",
+            "6,VI",
+            "7,VII",
+            "8,VIII",
     })
     public void convert_decimals_to_numerals(int decimal, String numeral) {
         assertThat(new RomanNumeralConverter().convert(decimal), is(numeral));
