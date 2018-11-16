@@ -23,7 +23,11 @@ public class RomanNumeralConverterShould {
             "40,XL",
             "48,XLVIII",
             "50,L",
-            "79,LXXIX"
+            "89,LXXXIX",
+            "90,XC",
+            "91,XCI",
+            "100,C",
+            "101,CI",
     })
     public void convert_decimals_to_numerals(int decimal, String numeral) {
         assertThat(new RomanNumeralConverter().convert(decimal), is(numeral));
