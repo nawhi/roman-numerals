@@ -7,7 +7,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class RomanNumeralConverterShould {
 
     @ParameterizedTest
-    @CsvSource({"1,I"})
+    @CsvSource({
+            "1,I",
+            "2,II",
+    })
     public void convert_decimals_to_numerals(int decimal, String numeral) {
         assertThat(new RomanNumeralConverter().convert(decimal), is(numeral));
     }
