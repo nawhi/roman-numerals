@@ -28,6 +28,8 @@ public class RomanNumeralConverterShould {
             "91,XCI",
             "100,C",
             "101,CI",
+            "400,CM",
+
     })
     public void convert_decimals_to_numerals(int decimal, String numeral) {
         assertThat(new RomanNumeralConverter().convert(decimal), is(numeral));
