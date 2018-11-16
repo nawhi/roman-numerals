@@ -1,9 +1,8 @@
 public class RomanNumeralConverter {
+
+    private final String[] results = { "I", "II", "III" };
+
     public String convert(int decimal) {
-        if (decimal == 3)
-            return "III";
-        if (decimal == 2)
-            return "II";
-        return "I";
+        return results[decimal - 1];
     }
 }
