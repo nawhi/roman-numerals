@@ -16,6 +16,12 @@ public class RomanNumeralConverterShould {
             "6,VI",
             "7,VII",
             "8,VIII",
+            "9,IX",
+            "10,X",
+            "15,XV",
+            "39,XXXIX",
+            "40,XL",
+            "48,XLVIII",
     })
     public void convert_decimals_to_numerals(int decimal, String numeral) {
         assertThat(new RomanNumeralConverter().convert(decimal), is(numeral));
