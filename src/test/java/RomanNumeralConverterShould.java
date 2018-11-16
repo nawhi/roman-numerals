@@ -22,6 +22,8 @@ public class RomanNumeralConverterShould {
             "39,XXXIX",
             "40,XL",
             "48,XLVIII",
+            "50,L",
+            "79,LXXIX"
     })
     public void convert_decimals_to_numerals(int decimal, String numeral) {
         assertThat(new RomanNumeralConverter().convert(decimal), is(numeral));
