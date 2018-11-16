@@ -11,6 +11,7 @@ public class RomanNumeralConverterShould {
             "1,I",
             "2,II",
             "3,III",
+            "4,IV",
     })
     public void convert_decimals_to_numerals(int decimal, String numeral) {
         assertThat(new RomanNumeralConverter().convert(decimal), is(numeral));
