@@ -2,30 +2,33 @@ import java.util.*;
 
 public class RomanNumeralConverter {
 
-    private final Map<Integer, String> results;
+    private final Map<Integer, String> numerals;
 
     public RomanNumeralConverter() {
-        results = new LinkedHashMap<>();
-        results.put(400, "CM");
-        results.put(100, "C");
-        results.put(90, "XC");
-        results.put(50, "L");
-        results.put(40, "XL");
-        results.put(10, "X");
-        results.put(9, "IX");
-        results.put(5, "V");
-        results.put(4, "IV");
-        results.put(1, "I");
+        numerals = new LinkedHashMap<>();
+        numerals.put(1000, "M");
+        numerals.put(900, "CM");
+        numerals.put(500, "D");
+        numerals.put(400, "CD");
+        numerals.put(100, "C");
+        numerals.put(90, "XC");
+        numerals.put(50, "L");
+        numerals.put(40, "XL");
+        numerals.put(10, "X");
+        numerals.put(9, "IX");
+        numerals.put(5, "V");
+        numerals.put(4, "IV");
+        numerals.put(1, "I");
     }
 
     public String convert(int decimal) {
-        if (results.containsKey(decimal))
-            return results.get(decimal);
+        if (numerals.containsKey(decimal))
+            return numerals.get(decimal);
 
-        for (int edge: results.keySet())
-            if (decimal > edge)
-                return results.get(edge) + convert(decimal - edge);
+        for (int boundary: numerals.keySet())
+            if (decimal > boundary)
+                return numerals.get(boundary) + convert(decimal - boundary);
 
-        return results.get(1);
+        return numerals.get(1);
     }
 }
