@@ -33,7 +33,9 @@ public class RomanNumeralConverterShould {
             "500,D",
             "501,DI",
             "900,CM",
-            "1000,M"
+            "1000,M",
+            "1999,MCMXCIX",
+            "2018,MMXVIII"
     })
     public void convert_decimals_to_numerals(int decimal, String numeral) {
         assertThat(new RomanNumeralConverter().convert(decimal), is(numeral));
