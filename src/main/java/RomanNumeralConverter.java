@@ -21,49 +21,18 @@ public class RomanNumeralConverter {
     public String convert(int decimal) {
         if (results.containsKey(decimal))
             return results.get(decimal);
-
-        String result = "";
-
-        while (decimal >= 100) {
-            result += results.get(100);
-            decimal -= 100;
-        }
-
-        while (decimal >= 90) {
-            result += results.get(90);
-            decimal -= 90;
-        }
-
-        while (decimal >= 50) {
-            result += results.get(50);
-            decimal -= 50;
-        }
-
-        while (decimal >= 40) {
-            result += results.get(40);
-            decimal -= 40;
-        }
-
-        while (decimal >= 10) {
-            result += results.get(10);
-            decimal -= 10;
-        }
-
-        while (decimal >= 9) {
-            result += results.get(9);
-            decimal -= 9;
-        }
-
-        while (decimal >= 5) {
-            result += results.get(5);
-            decimal -= 5;
-        }
-
-        while (decimal >= 1) {
-            result += results.get(1);
-            decimal -= 1;
-        }
-
-        return result;
+        if (decimal > 100)
+            return results.get(100) + convert(decimal - 100);
+        if (decimal > 90)
+            return results.get(90) + convert(decimal - 90);
+        if (decimal > 50)
+            return results.get(50) + convert(decimal - 50);
+        if (decimal > 40)
+            return results.get(40) + convert(decimal - 40);
+        if (decimal > 10)
+            return results.get(10) + convert(decimal - 10);
+        if (decimal > 5)
+            return results.get(5) + convert(decimal - 5);
+        return results.get(1) + convert(decimal - 1);
     }
 }
